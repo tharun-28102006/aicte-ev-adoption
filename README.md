@@ -1,16 +1,19 @@
-# 🚗 EV Adoption Analysis - AICTE Internship (Internship Project – Week 1 & Week 2 Submission)
+# ⚡ Electric Vehicle (EV) Demand Forecasting using Machine Learning
 
-## 📌 Problem Statement
-As electric vehicle (EV) adoption surges, urban planners need to anticipate infrastructure needs—especially charging stations. Inadequate planning can lead to bottlenecks, impacting user satisfaction and hindering sustainability goals.
+## 🚀 Project Overview
+
+This project focuses on building a machine learning-based forecasting system to predict the **state-wise monthly electric vehicle (EV) demand in India**. With the increasing importance of sustainable transportation, predicting future EV demand can help policymakers, manufacturers, and infrastructure developers make data-driven decisions.
+
+The project uses **regression-based machine learning models** trained on real-world features like fuel prices, government EV policies, number of charging stations, per capita income, population, and estimated energy demand.
 
 ---
 
-## 🎯 Goal
-Analyze historical EV adoption data to understand:
-- Overall EV growth trend over time
-- Distribution of EV adoption across counties
-- Comparison between BEVs (Battery Electric Vehicles) and PHEVs (Plug-in Hybrid Electric Vehicles)
+## 🎯 Learning Objectives
 
+- To apply machine learning algorithms for real-world forecasting problems.
+- To understand the influence of socio-economic and infrastructural factors on EV adoption.
+- To practice data preprocessing, feature engineering, and model evaluation.
+- To develop a user-friendly web interface using **Streamlit** for EV demand prediction.
 
 ---
 
@@ -26,66 +29,88 @@ Analyze historical EV adoption data to understand:
   - `Total Vehicles`
   - `Percent Electric Vehicles`
 
+---
 
-## 🚀 Project Overview
+## 🧰 Tools and Technologies Used
 
-
-We cover two major milestones:
-- **Week 1**: Exploratory Data Analysis (EDA) and Visualization  
-- **Week 2**: Time Series Forecasting for EV demand prediction
+| Category               | Tools / Libraries                               |
+|------------------------|--------------------------------------------------|
+| Programming Language   | Python                                           |
+| Data Manipulation      | Pandas, NumPy                                    |
+| Data Visualization     | Matplotlib, Seaborn                              |
+| Machine Learning       | Scikit-learn, XGBoost                            |
+| Forecasting Models     | Linear Regression, Random Forest, XGBoost        |
+| Web Application        | Streamlit                                        |
+| Deployment (optional)  | Streamlit Cloud / Localhost                      |
 
 ---
 
-## 🗂️ Contents
-- [`week1_&_Week2_ev_analysis.ipynb`](./week1_&_Week2_ev_analysis.ipynb) – Week1- Data cleaning, correlation, and visualization. Week2- Model training and forecasting  
-- [`preprocessed_ev_data.csv`](./preprocessed_ev_data.csv) – Cleaned dataset used for training  
-- [`forecasting_ev_model.pkl`](./forecasting_ev_model.pkl) – Trained forecasting model  
+## 🔎 Problem Statement
+
+As electric vehicles gain traction in India, **predicting their adoption rate** becomes crucial for urban planning, infrastructure development, and energy management. However, forecasting EV demand is challenging due to the involvement of multiple dynamic factors like fuel prices, government policies, and income levels.
 
 ---
 
-## 📊 Week 1 – EV Data Exploration and Visualization
+## 💡 Solution
 
-### 📌 Objectives:
-- Clean raw EV data (state-wise and monthly)
-- Visualize EV adoption trends
-- Identify influential factors like:
-  - Fuel price
-  - Charging infrastructure
-  - State-level policy strength
-  - Population and income
+The project proposes a **regression-based predictive model** trained on historical EV registration data enriched with external features. The key steps include:
 
-### 🔍 Key Findings:
-- States with stronger EV policies and infrastructure (like Delhi and Maharashtra) show higher adoption.
-- Fuel price and charging stations have a strong positive correlation with EV growth.
-- Urban density and income levels also play a crucial role.
-
-### 📉 Sample Visualization:
-> *Heatmaps, line plots, and bar charts were used to reveal patterns over time and across regions.*
+- Data cleaning and preprocessing.
+- Feature selection based on correlation with target.
+- Model training using different regression algorithms.
+- Performance evaluation using RMSE, R² score.
+- Future EV demand forecasting (2025–2027).
+- Simple interactive frontend using Streamlit for real-time predictions.
 
 ---
 
-## 🔮 Week 2 – Time Series Forecasting of EV Demand
+## 📈 Methodology
 
-### 📌 Objective:
-To forecast monthly EV demand using a pre-trained time series model.
+1. **Data Collection**  
+   - Historical EV registration data (state/county-wise)
+   - External features: Fuel Price, Policy Strength, Charging Stations, Income, Population, Energy Demand
 
-### ⚙️ Model Highlights:
-- Trained on a preprocessed dataset with factors like fuel cost, income, policy scores, and station count.
-- Uses a regression-based approach for monthly forecasting.
+2. **Preprocessing**  
+   - Handling missing values  
+   - Date conversion and time-based grouping  
+   - Outlier removal and normalization  
 
-### 🧠 Prediction Strategy:
-1. Load pre-trained model from `forecasting_ev_model.pkl`
-2. Use `preprocessed_ev_data.csv` for inference
-3. Forecast EV demand across different months
+3. **Feature Engineering**  
+   - Correlation analysis  
+   - Feature importance (Random Forest)  
+   - Selection of most influential features  
 
-### ✅ Output:
-- A NumPy array showing forecasted demand for each entry in the test set
-- Flexible to scale state-wise predictions or aggregate at national level
+4. **Model Building**  
+   - Tried models: Linear Regression, Decision Tree, Random Forest, XGBoost  
+   - Chosen model: **XGBoost** (best performance in accuracy and generalization)  
+
+5. **Forecasting Future Demand**  
+   - Used trained model to predict demand for next 3 years (2025–2027)  
+   - Scenario-based predictions (e.g., increasing fuel price, better policies)
+
+6. **Web App Interface**  
+   - Built with Streamlit  
+   - Allows manual input of feature values and gives real-time EV demand predictions
 
 ---
 
-## 🧪 How to Run
+## 🧪 Results
 
-Install required libraries:
+- **Best Model**: XGBoost Regressor  
+- **Performance Metrics**:  
+  - RMSE: *Low error values observed*  
+  - R² Score: *>90% on test data*  
+
+- **Insights**:
+  - **Fuel Prices** and **Policy Strength** are major drivers of EV demand.
+  - States with more charging stations show higher EV adoption rates.
+
+---
+
+## 💻 How to Run the Project Locally
+
+### Step 1: Clone the Repository
+
 ```bash
-pip install pandas numpy scikit-learn matplotlib seaborn
+git clone https://github.com/your-username/ev-demand-forecasting.git
+cd ev-demand-forecasting
