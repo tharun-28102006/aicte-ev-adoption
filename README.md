@@ -107,10 +107,3 @@ The project proposes a **regression-based predictive model** trained on historic
 
 ---
 
-## 💻 How to Run the Project Locally
-
-### Step 1: Clone the Repository
-
-```bash
-git clone https://github.com/your-username/ev-demand-forecasting.git
-cd ev-demand-forecasting
